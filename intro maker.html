@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<body>
+		<style>
+		body {
+			background: SlateBlue;
+      font-family: Arial, Helvetica, sans-serif;
+		}
+
+		.intro {
+			background: SlateBlue;
+			color: #fff;
+			padding: 1rem;
+			font-family: Arial, Helvetica, sans-serif;
+			border-radius: 10px;
+		}
+
+		input, select, textarea, button{
+			width: 13rem;
+			padding: 12px 20px;
+			margin: 8px 0;
+			box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+			border: none;
+			background-color: pink;
+			color: purple;
+      border-radius: 2px;
+		}
+	</style>
+		<div class="intro">
+			<center>
+				<h2>Introduction Maker</h2>
+				<p style="color: pink">Made By Oli ♥#6623</p>
+				<div style="display: row; justify-content: center">
+					<p>Whats Ur Name ?</p>
+					<input type="text" id="name" placeholder="Enter Your Name" !important>
+						<p> What Is your Gender ? </p>
+						<div style="display: flex; justify-content: space-around;">
+							<select name="gender" id="pronouns">
+								<option value="She/Her">She/Her</option>
+								<option value="He/Him">He/Him</option>
+								<option value="They/Them">They/Them</option>
+								<option value="This/that">This/that</option>
+							</select>
+						</div>
+						<p>When is ur birthday ?</p>
+						<input type="date" id="bday" placeholder="Enter ur Birthday" !important>
+							<br>
+								<p>What do you Like UwU ?</p>
+								<textarea id="like" placeholder="Write Here"></textarea>
+								<br>
+									<p>What do you hate ;-; ?</p>
+									<textarea id="dis" placeholder="Write Here"></textarea>
+									<br>
+										<button style="font-size: 1rem;color: #fff; background:purple;" type="submit" onClick="makeintro()">
+											<strong>Make Intro</strong>
+										</button>
+									</div>
+								</center>
+								<div>
+									<center>
+										<p>Here Will be you intro</p>
+										<textarea id="intro" style="color: #fff; outline: none; background: SlateBlue;width: 40rem; height: 20rem;resize: none;overflow: hidden; border: 2px solid #fff" readonly></textarea>
+										<br>
+											<button onclick="copy()">Copy</button>
+											<center>
+											</div>
+										</div>
+										<script>
+function makeintro(){
+	var name = document.getElementById("name").value;
+    var pro = document.getElementById("pronouns").value;
+    var birthday = document.getElementById("bday").value;
+    var likes = document.getElementById("like").value;
+    var dislikes = document.getElementById("dis").value;
+    
+    var id = document.getElementById("intro");
+    let introfinal = `
+🌈·➭ ❝   I am ${name}
+        ︶︶︶︶︶︶︶
+hello everyone ⋆ („ᵕᴗᵕ„)
+
+₊˚✧ pronouns — ${pro}
+₊˚✧ birthday — ${birthday}
+₊˚✧ likes — ${likes}
+₊˚✧ dislikes — ${dislikes}
+
+🍃 ⋆ ◡̈  nice meeting you all . ፧ ੈ♡‧₊
+───────────────────────‧₊˚`
+    id.innerHTML = introfinal
+}
+function copy() {
+  var id = document.getElementById("intro");
+  id.select();
+  document.execCommand("copy");
+  alert("Copied to clipboard :) paste it anywhere to introduce yourself!!");
+}
+</script>
+	</body>
+</html>
